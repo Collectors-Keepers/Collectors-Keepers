@@ -17,4 +17,6 @@ Angela Jackson <br/>
 
 ### Domain Model
 
+[Click here for Whiteboard](https://miro.com/app/board/uXjVORdoqqw=/)
+
 ![Domain Model](https://user-images.githubusercontent.com/93963393/151910009-532009f6-1722-48e1-b800-9731fb467896.PNG)
