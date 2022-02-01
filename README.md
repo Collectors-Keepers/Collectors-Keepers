@@ -20,3 +20,7 @@ Angela Jackson <br/>
 [Click here for Whiteboard](https://miro.com/app/board/uXjVORdoqqw=/)
 
 ![Domain Model](https://user-images.githubusercontent.com/93963393/151910009-532009f6-1722-48e1-b800-9731fb467896.PNG)
+
+### Project Manager
+
+[Click here for project manager](https://github.com/orgs/Collectors-Keepers/projects)
