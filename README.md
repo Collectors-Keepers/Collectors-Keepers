@@ -13,7 +13,8 @@ Angela Jackson <br/>
 ![About Us Wireframe](https://user-images.githubusercontent.com/93963393/151909842-232b2a31-d468-45ee-a111-e7e1b671e9fe.PNG)
 ![HomePage Wireframe](https://user-images.githubusercontent.com/93963393/151909851-a8f0060a-08e9-48a4-a9ff-bf96d18eb257.PNG)
 ![Make A Collection Wireframe](https://user-images.githubusercontent.com/93963393/151909855-80856e58-90bc-46ae-b4aa-2f0a80dfd736.PNG)
-![Make A Collection Wireframe](https://user-images.githubusercontent.com/93963393/151909870-e65d6ba3-f764-40d4-90e7-36c4107f924e.PNG)
+![Catalog Wireframe](https://user-images.githubusercontent.com/93963393/151911659-950589c6-82e4-4ba9-967f-7b355691992e.PNG)
+
 
 ### Domain Model
 
