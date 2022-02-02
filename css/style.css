@@ -6,16 +6,43 @@
 header{
   width: 920px;
   background-color: black;
+  border: 5px solid snow;
+  border-radius: 5px;
+  padding: 1rem;
+  
 }
 
 body {
   width: 960px;
+  height: 100vh;
+  margin: 30px auto;
   background-color: blue;
+
 }
 
 nav {
   width: 920px;
   background-color: gray;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+
+}
+
+main {
+  background-color: tomato;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  
+}
+
+div {
+  background-color: yellowgreen;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+
 }
 
 ul {
