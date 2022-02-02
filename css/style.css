@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  background-color: white;
+}
+
+header{
+  width: 920px;
+  background-color: black;
+}
+
+body {
+  width: 960px;
+  background-color: blue;
+}
+
+nav {
+  width: 920px;
+  background-color: gray;
+}
+
+ul {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+section {
+  width: 450px;
+  display:flex;
+  justify-content: space-evenly;
+  overflow:auto;
+}
+
+table {
+  width: 960px;
+  background-color: green;
+}
+
+/* img {
+  border
+} */
+
+button:hover {
+  cursor:pointer;
+}
