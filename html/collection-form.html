@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
   <title>Make Your Collection</title>
 </head>
 
@@ -18,29 +18,34 @@
     <form>
       <fieldset>
         <legend>Make Your Collection</legend>
-        <label>Title
-          <input type="text" required>
+        <label for="title">Title
+          <input type="text" required id="title">
         </label>
-        <label>Condition
-          <input type="text" required>
+        <label for="condition">Condition
+          <select id="condition">
+            <option value="" disabled selected>--</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
         </label>
-        <label>Value
-          <input type="number" step="0.1" required>
+        <label for="price">Value
+          <input type="number" step="0.1" required id="price">
         </label>
-        <label>Pressing
-          <input type="text">
+        <label for="pressing">Pressing
+          <input type="text" id="pressing">
         </label>
-        <label>LP
-          <input type="radio" name="size">
-        </label>
-        <label>EP
-          <input type="radio" name="size">
+        <label for="size">Size
+          <select id="size">
+            <option value="" disabled selected>--</option>
+            <option value="LP">LP</option>
+            <option value="EP">EP</option>
         </label>
       </fieldset>
       <button type="submit">Submit</button>
     </form>
   </main>
-  <script src="js/app.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 
 </html>
