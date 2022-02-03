@@ -12,6 +12,7 @@ let Collection = function(title, condition, price, pressing, size){
   this.price=price;
   this.pressing=pressing;
   this.size=size;
+  catalogArray.push(this);
 };
 
 
@@ -27,12 +28,12 @@ function handleSubmit(event){
 
   let newCollection=new Collection(title, condition, price,pressing,size);
   console.log(newCollection);
-  catalogArray.push(newCollection);
-  catalogArraylocalStorage();
+  //catalogArray.push(newCollection);
+  catalogArrayLocalStorage();
   console.log(catalogArray);
 }
 
-function catalogArraylocalStorage(){
+function catalogArrayLocalStorage(){
   let stringified = JSON.stringify(catalogArray);
   localStorage.setItem('catalogArrayStorage', stringified);
 }
@@ -41,21 +42,19 @@ function localStorageUnpack(){
   let unpacked = localStorage.getItem('catalogArrayStorage');
   let parsed = JSON.parse(unpacked);
   catalogArray.push(parsed);
-  console.log(parsed);
 }
-localStorageUnpack();
 
 function catalogRendering(array){
+  localStorageUnpack();
   for (let j=0; j < array.length; j++){
     let tr= document.createElement('tr');
     catalogTable.appendChild(tr);
-    //for ( let i=0; i<5; i++){ 
-      //let td = document.createElement('td');
-      //td.textContent=array[i];
-      //tr.appendChild(td);
+    let td = document.createElement('td');
+    td.textContent = array;
+    tr.appendChild(td);
+    console.log(catalogArray.length);
 
-    //}
-  } 
+  }
 }
 catalogRendering(catalogArray);
 console.log(catalogArray);
