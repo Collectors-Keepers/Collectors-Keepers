@@ -13,6 +13,7 @@ let Collection = function(title, condition, price, pressing, size){
   this.pressing=pressing;
   this.size=size;
   catalogArray.push(this);
+  console.log(this.array);
 };
 
 
@@ -27,10 +28,9 @@ function handleSubmit(event){
 
 
   let newCollection=new Collection(title, condition, price,pressing,size);
-  console.log(newCollection);
-  //catalogArray.push(newCollection);
+  // catalogArray.push(newCollection);
   catalogArrayLocalStorage();
-  console.log(catalogArray);
+  catalogRendering(catalogArray);
 }
 
 function catalogArrayLocalStorage(){
@@ -41,23 +41,27 @@ function catalogArrayLocalStorage(){
 function localStorageUnpack(){
   let unpacked = localStorage.getItem('catalogArrayStorage');
   let parsed = JSON.parse(unpacked);
-  catalogArray.push(parsed);
+  catalogArray= parsed;
+  console.log(parsed);
 }
-
+// localStorageUnpack();
 function catalogRendering(array){
   localStorageUnpack();
   for (let j=0; j < array.length; j++){
     let tr= document.createElement('tr');
     catalogTable.appendChild(tr);
-    let td = document.createElement('td');
-    td.textContent = array;
-    tr.appendChild(td);
-    console.log(catalogArray.length);
+    for (let prop in catalogArray[j]){
+      let td = document.createElement('td');
+      td.textContent = catalogArray[j][prop];
+
+      tr.appendChild(td);
+    }
 
   }
 }
-catalogRendering(catalogArray);
 console.log(catalogArray);
+// catalogRendering(catalogArray);
+
 
 
 
