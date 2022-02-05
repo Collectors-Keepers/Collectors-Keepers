@@ -1,7 +1,7 @@
 'use strict';
 
 let catalogArray =[]; // collection of collections
-let collection = document.querySelector('form');
+// let collection = document.querySelector('form');
 let catalogTable = document.getElementById('catalog-body');
 let viewCollection = document.getElementById('collection-display');
 
@@ -16,28 +16,26 @@ let Collection = function(title, condition, price, pressing, size){
 
 
 
-function handleSubmit(event){
-  event.preventDefault();
-  let title= event.target.title.value;
-  let condition= event.target.condition.value;
-  let price= event.target.price.value;
-  let pressing= event.target.pressing.value;
-  let size= event.target.size.value;
-  console.log(catalogArray);
+// function handleSubmit(event){
+//   event.preventDefault();
+//   let title= event.target.title.value;
+//   let condition= event.target.condition.value;
+//   let price= event.target.price.value;
+//   let pressing= event.target.pressing.value;
+//   let size= event.target.size.value;
+//   console.log(catalogArray);
 
-  let newCollection=new Collection(title, condition, price,pressing,size);
-  console.log(catalogArray);
-  // catalogArray.push(newCollection);
-  console.log(catalogArray);
-  catalogArrayLocalStorage(); // do not move this calling of this function from this line
-}
+//   let newCollection=new Collection(title, condition, price,pressing,size);
+//   console.log(catalogArray);
+//   // catalogArray.push(newCollection);
+//   console.log(catalogArray);
+//   catalogArrayLocalStorage(); // do not move this calling of this function from this line
+// }
 // do not alter catalogArrayLocalStorage
 function catalogArrayLocalStorage(){
-  localStorageUnpack();
-  console.log(catalogArray);
+  // localStorageUnpack();
   let stringified = JSON.stringify(catalogArray);
   localStorage.setItem('catalogArrayStorage', stringified);
-  console.log(stringified);
 }
 
 function localStorageUnpack(){
@@ -63,31 +61,26 @@ function catalogRendering(array){
     for (let j=0; j < array.length; j++){
       let tr= document.createElement('tr');
       catalogTable.appendChild(tr);
-      console.log(catalogArray.length);
       for (let prop in catalogArray[j]){
         let td = document.createElement('td');
         td.textContent = catalogArray[j][prop];
         tr.appendChild(td);
       }
     }
-    console.log(catalogArray.length);
-  }
-  else {
-    console.log('errorrrrrr');
   }
 }
 
-function handleClick(event){
-  if(event.target.id=== 'button'){
-    console.log(event.target.id);
-    localStorageUnpack();
-    console.log(catalogArray.length);
-    catalogRendering(catalogArray);
-    console.log(event.target.id);
-  }
-}
+// function handleClick(event){
+//   if(event.target.id=== 'button'){
+//     console.log(event.target.id);
+//     localStorageUnpack();
+//     console.log(catalogArray.length);
+//     catalogRendering(catalogArray);
+//     console.log(event.target.id);
+//   }
+// }
 
 
 
-collection.addEventListener('submit',handleSubmit);
+// collection.addEventListener('submit',handleSubmit);
 // viewCollection.addEventListener('click', handleClick);
