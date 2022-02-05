@@ -1,39 +1,40 @@
 'use strict';
 
 let catalogArray =[]; // collection of collections
-// let collection = document.querySelector('form');
 let catalogTable = document.getElementById('catalog-body');
-let viewCollection = document.getElementById('collection-display');
+let jimsArray = [];
 
-let Collection = function(title, condition, price, pressing, size){
+let Item = function(title, condition, price, pressing, size){
   this.title=title;
   this.condition=condition;
   this.price=price;
   this.pressing=pressing;
   this.size=size;
   catalogArray.push(this);
+  // Collection.itemsArray.push(this);
 };
 
+let HardItem = function(title, condition, price, pressing, size){
+  this.title=title;
+  this.condition=condition;
+  this.price=price;
+  this.pressing=pressing;
+  this.size=size;
+  // Collection.itemsArray.push(this);
+};
+// let Collection = function() {
+//   this.itemsArray = [];
+// };
 
+let jimsMix = new HardItem('The Gogos', 'Excellent', 100, '3rd', 'LP');
+let jimsMix2 = new HardItem('The Gogos1', 'Excellent', 100, '3rd', 'LP');
+let jimsMix3 = new HardItem('The Gogos2', 'Excellent', 100, '3rd', 'LP');
+let jimsMix4 = new HardItem('The Gogos3', 'Excellent', 100, '3rd', 'LP');
+jimsArray.push(jimsMix, jimsMix2, jimsMix3, jimsMix4);
+console.log(jimsArray);
 
-// function handleSubmit(event){
-//   event.preventDefault();
-//   let title= event.target.title.value;
-//   let condition= event.target.condition.value;
-//   let price= event.target.price.value;
-//   let pressing= event.target.pressing.value;
-//   let size= event.target.size.value;
-//   console.log(catalogArray);
-
-//   let newCollection=new Collection(title, condition, price,pressing,size);
-//   console.log(catalogArray);
-//   // catalogArray.push(newCollection);
-//   console.log(catalogArray);
-//   catalogArrayLocalStorage(); // do not move this calling of this function from this line
-// }
 // do not alter catalogArrayLocalStorage
 function catalogArrayLocalStorage(){
-  // localStorageUnpack();
   let stringified = JSON.stringify(catalogArray);
   localStorage.setItem('catalogArrayStorage', stringified);
 }
@@ -48,39 +49,33 @@ function localStorageUnpack(){
       let price = order.price;
       let pressing = order.pressing;
       let size = order.size;
-      let newCollection=new Collection(title, condition, price,pressing,size);
+      let newItem = new Item(title, condition, price,pressing,size);
     }
   }
-  // else{
-
-  // }
 }
+
 function catalogRendering(array){
   console.log(array.length);
   if(array.length>0){
     for (let j=0; j < array.length; j++){
       let tr= document.createElement('tr');
       catalogTable.appendChild(tr);
-      for (let prop in catalogArray[j]){
+      for (let prop in array[j]){
         let td = document.createElement('td');
-        td.textContent = catalogArray[j][prop];
+        td.textContent = array[j][prop];
         tr.appendChild(td);
       }
-    }
+    } collectionSeparator();
   }
 }
 
-// function handleClick(event){
-//   if(event.target.id=== 'button'){
-//     console.log(event.target.id);
-//     localStorageUnpack();
-//     console.log(catalogArray.length);
-//     catalogRendering(catalogArray);
-//     console.log(event.target.id);
-//   }
-// }
+function collectionSeparator() {
+  let tr = document.createElement('tr');
+  catalogTable.appendChild(tr);
+  for (let i = 0; i < 5; i++) {
+    let td = document.createElement('td');
+    td.textContent = '--';
+    tr.appendChild(td);
+  }
+}
 
-
-
-// collection.addEventListener('submit',handleSubmit);
-// viewCollection.addEventListener('click', handleClick);
