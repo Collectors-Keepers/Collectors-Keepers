@@ -1,10 +1,9 @@
 'use strict';
-console.log('hi');
 
 let catalogArray =[]; // collection of collections
 let collection = document.querySelector('form');
-let viewCollection = document.getElementById('button');
 let catalogTable = document.getElementById('catalog-body');
+let viewCollection = document.getElementById('collection-display');
 
 let Collection = function(title, condition, price, pressing, size){
   this.title=title;
@@ -28,15 +27,17 @@ function handleSubmit(event){
 
   let newCollection=new Collection(title, condition, price,pressing,size);
   console.log(catalogArray);
-  catalogArray.push(newCollection);
+  // catalogArray.push(newCollection);
   console.log(catalogArray);
+  catalogArrayLocalStorage(); // do not move this calling of this function from this line
 }
-
+// do not alter catalogArrayLocalStorage
 function catalogArrayLocalStorage(){
+  localStorageUnpack();
+  console.log(catalogArray);
   let stringified = JSON.stringify(catalogArray);
   localStorage.setItem('catalogArrayStorage', stringified);
   console.log(stringified);
-
 }
 
 function localStorageUnpack(){
@@ -52,15 +53,13 @@ function localStorageUnpack(){
       let newCollection=new Collection(title, condition, price,pressing,size);
     }
   }
-  else{
-    catalogArrayLocalStorage();
-  }
-}
+  // else{
 
-catalogRendering(catalogArray);
+  // }
+}
 function catalogRendering(array){
-  localStorageUnpack();
-  if(catalogArray.length>0){
+  console.log(array.length);
+  if(array.length>0){
     for (let j=0; j < array.length; j++){
       let tr= document.createElement('tr');
       catalogTable.appendChild(tr);
@@ -77,13 +76,18 @@ function catalogRendering(array){
     console.log('errorrrrrr');
   }
 }
-console.log(catalogArray);
-// catalogRendering(catalogArray);
-console.log(catalogArray.length);
 
-
+function handleClick(event){
+  if(event.target.id=== 'button'){
+    console.log(event.target.id);
+    localStorageUnpack();
+    console.log(catalogArray.length);
+    catalogRendering(catalogArray);
+    console.log(event.target.id);
+  }
+}
 
 
 
 collection.addEventListener('submit',handleSubmit);
-// viewCollection.addEventListener('click', catalogRendering);
+// viewCollection.addEventListener('click', handleClick);
