@@ -1,12 +1,21 @@
 * {
   box-sizing: border-box;
-  background-color:linen;
+  /* background-color:linen; */
   min-height: 1em;
   box-align: center;
 }
-
+table,tr,td, th{
+background-color: rgba(250, 240, 230, 0.5);
+font-size: 16pt;
+font-weight:bold;
+border: black solid 5px;
+height:20pt;
+padding: 10px;
+width: 960px;
+}
 
 body {
+  background-color:linen;
   width: 960px;
   height: 100vh;
   margin: 30px auto;
@@ -16,9 +25,16 @@ span {
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-bottom: 25px;
+  margin: 25px auto;
+  width:900px;
+  border: 5px solid black;
+border-radius: 5px;
+background-image: url(../img/light\ up\ vinyl.jpg);
+/* padding:10px; */
 }
-
+.form-main{
+  background-image: url(../img/light\ up\ vinyl.jpg);
+}
 header {
   width: 920px;
   background-color:#b83c1d;
@@ -73,7 +89,9 @@ main {
   min-height: 75%;
   margin: auto 30px;
 }
-
+#collection-display{
+  background-image: url(../img/vinyl\ bookshelf.jpg);
+}
 div {
   background-color: #b83c1d;
   border: 5px solid;
@@ -95,11 +113,31 @@ section {
   justify-content: space-evenly;
   overflow:auto;
 }
-
-table {
-  width: 960px;
-  background-color: green;
+form{
+  width:100%
 }
+fieldset{
+  display: flex;
+  flex-direction: column;
+  color:rgb(233, 214, 49);
+  width:fit-content;
+  font-size: 16pt;
+  padding: 10px;
+  align-items:flex-start;
+}
+#makeYourCollection{
+  border: 5px solid black;
+}
+label{
+  display: inline-block;
+  text-align: center;
+  margin:5px;
+}
+select{
+  display: inline-block;
+  text-align: center;
+}
+
 
 /* img {
   border
