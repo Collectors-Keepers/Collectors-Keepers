@@ -11,7 +11,6 @@ let Item = function(title, condition, price, pressing, size){
   this.pressing=pressing;
   this.size=size;
   catalogArray.push(this);
-  // Collection.itemsArray.push(this);
 };
 
 let HardItem = function(title, condition, price, pressing, size){
@@ -20,20 +19,16 @@ let HardItem = function(title, condition, price, pressing, size){
   this.price=price;
   this.pressing=pressing;
   this.size=size;
-  // Collection.itemsArray.push(this);
 };
-// let Collection = function() {
-//   this.itemsArray = [];
-// };
 
-let jimsMix = new HardItem('The Gogos', 'Excellent', 100, '3rd', 'LP');
-let jimsMix2 = new HardItem('The Gogos1', 'Excellent', 100, '3rd', 'LP');
-let jimsMix3 = new HardItem('The Gogos2', 'Excellent', 100, '3rd', 'LP');
-let jimsMix4 = new HardItem('The Gogos3', 'Excellent', 100, '3rd', 'LP');
-jimsArray.push(jimsMix, jimsMix2, jimsMix3, jimsMix4);
-console.log(jimsArray);
 
-// do not alter catalogArrayLocalStorage
+let jimsMix = new HardItem('Guns n Roses: Appetite for Destruction', 'excellent', 100, '1st', 'LP');
+let jimsMix2 = new HardItem('Warrant: Cherry Pie', 'Fair', 30, '1st', 'LP');
+let jimsMix3 = new HardItem('The Pogues: Fairy Tale of New York', 'good', 45, '2nd', 'EP');
+let jimsMix4 = new HardItem('The Jackson Five: Greatest Hits', 'excellent', 100, '1st', 'LP');
+let jimsMix5 = new HardItem ('Rodney Dangerfield: No Respect', 'excellent', .25, 'LP');
+jimsArray.push(jimsMix, jimsMix2, jimsMix3, jimsMix4, jimsMix5);
+
 function catalogArrayLocalStorage(){
   let stringified = JSON.stringify(catalogArray);
   localStorage.setItem('catalogArrayStorage', stringified);
@@ -55,7 +50,6 @@ function localStorageUnpack(){
 }
 
 function catalogRendering(array){
-  console.log(array.length);
   if(array.length>0){
     for (let j=0; j < array.length; j++){
       let tr= document.createElement('tr');

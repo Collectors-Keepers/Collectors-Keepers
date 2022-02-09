@@ -24,6 +24,15 @@ body {
 .separator {
   background-color:rgba(0, 0, 0, 0.876)
 }
+#collection-examples{
+  margin-bottom: 15px;
+}
+#collection-examples img{
+  border-radius: 10%;
+}
+#instructions img{
+  border-radius: 10%;
+}
 
 span {
   display: flex;
@@ -34,6 +43,7 @@ span {
   border: 5px solid black;
   border-radius: 5px;
   background-image: url(../img/light\ up\ vinyl.jpg);
+  padding: 10px;
 
 }
 .form-main{
@@ -101,10 +111,11 @@ main {
 .aboutUs-main img {
   float: left;
   margin-right: 10px;
+  border-radius: 10%;
 }
 
 .aboutUs-main div {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -188,6 +199,9 @@ button{
   margin: 30px auto;
 }
 
+
+
 #collectionPic img {
   width: 100%;
+  border-radius: 10%;
 }
