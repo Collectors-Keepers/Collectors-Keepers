@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Make Your Collection</title>
+</head>
+
+<body>
+  <header class="headers form-header">
+    <h1>Build Your Collection</h1>
+  </header>
+  <nav class="nav form-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href=about-us.html>About Us</a></li>
+      <li><a href="collection-form.html">Create A Collection</a></li>
+      <li><a href="collections.html">View Catalog</a></li>
+      <li><i class="fas fa-record-vinyl"></i></li>
+      <li><i class="fas fa-user"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-facebook-square"></i></li>
+      <li><i class="fab fa-instagram-square"></i></li>
+    </ul>
+  </nav>
+  <main class="main form-main">
+    <form>
+      <fieldset id="makeYourCollection">
+        <legend>Make Your Collection</legend>
+        <label for="title">Title
+          <input type="text" required id="title">
+        </label>
+        <label for="condition">Condition
+          <select id="condition">
+            <option value="" disabled selected>--</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+          </select>
+        </label>
+        <label for="price">Value
+          <input type="number" step=".01" required id="price">
+        </label>
+        <label for="pressing">Pressing
+          <input type="text" id="pressing">
+        </label>
+        <label for="size">Size
+          <select id="size">
+            <option value="" disabled selected>--</option>
+            <option value="LP">LP</option>
+            <option value="EP">EP</option>
+          </select>
+        </label>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  <div id="collectionPic">
+    <img src="../img/Collection.jpg" alt="Collection" width="700" height="500">
+  </div>
+  <script src="https://kit.fontawesome.com/865fc2d01d.js" crossorigin="anonymous"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/collection-form.js"></script>
+</body>
+
+</html>
